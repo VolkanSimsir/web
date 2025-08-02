@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volkan SİMSİR | AI & Software Engineer</title>
+    <title>Volkan S | AI & Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -900,7 +900,7 @@
             display: flex;
             justify-content: center;
             gap: 1.8rem;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
 
         .footer-social a {
@@ -916,8 +916,8 @@
 
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            font-size: 1rem;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
             color: var(--gray);
         }
 
@@ -975,10 +975,6 @@
 
             .hero h1 {
                 font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
             }
 
             section {
@@ -1074,12 +1070,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(10px);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .modal.show {
-            opacity: 1;
+            overflow-y: auto;
         }
 
         .modal-content {
@@ -1088,7 +1079,7 @@
             padding: 2.5rem;
             border-radius: 20px;
             width: 90%;
-            max-width: 550px;
+            max-width: 600px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(37, 99, 235, 0.3);
             position: relative;
@@ -1124,35 +1115,6 @@
             font-weight: 800;
         }
 
-        /* Visitor Counter */
-        .visitor-counter {
-            background: rgba(15, 23, 42, 0.8);
-            padding: 12px 25px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1rem;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            animation: counterPulse 3s infinite;
-        }
-
-        @keyframes counterPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .visitor-counter i {
-            color: var(--primary);
-        }
-
-        .visitor-count {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
         /* Calendar Input Styles */
         .calendar-input {
             width: 100%;
@@ -1186,7 +1148,7 @@
             background: linear-gradient(45deg, var(--primary), var(--accent), #06b6d4, var(--primary));
             border-radius: inherit;
             z-index: -1;
-            animation: gradientRotate 4s linear infinite;
+            animation: gradientRotate 3s linear infinite;
             background-size: 300% 300%;
         }
 
@@ -1207,7 +1169,7 @@
             align-items: center;
             color: var(--primary);
             opacity: 0.7;
-            animation: bounce 2.5s infinite;
+            animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
@@ -1217,8 +1179,8 @@
         }
 
         .scroll-indicator span {
-            margin-top: 12px;
-            font-size: 1rem;
+            margin-top: 10px;
+            font-size: 0.9rem;
             font-weight: 500;
         }
 
@@ -1241,6 +1203,106 @@
         .notification.show {
             transform: translateX(0);
         }
+
+        /* Availability Calendar */
+        .availability-calendar {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .availability-calendar h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .available-dates {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .date-option {
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--primary);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .date-option:hover {
+            background: rgba(37, 99, 235, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .date-option.selected {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Form Submission Overlay */
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .form-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .form-overlay-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .form-overlay-content i {
+            font-size: 3rem;
+            color: var(--success);
+            margin-bottom: 20px;
+        }
+
+        .form-overlay-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .form-overlay-content p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .form-overlay-content .btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -1253,7 +1315,7 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">Volkan ŞİMŞİR</div>
+            <div class="logo">Volkan S</div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -1271,7 +1333,7 @@
     <section id="home" class="hero">
         <canvas id="ai-canvas"></canvas>
         <div class="container hero-content">
-            <h1>Volkan ŞİMŞİR</h1>
+            <h1>Volkan S</h1>
             <p>AI Engineer & Generative Technology Specialist</p>
             <a href="#contact" class="btn">Get In Touch</a>
         </div>
@@ -1285,10 +1347,10 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://placehold.co/500x600/0f172a/2563eb" alt="Volkan ŞİMŞİR">
+                    <img src="https://placehold.co/500x600/0f172a/2563eb" alt="Volkan S">
                 </div>
                 <div class="about-text">
-                    <h3>Hello, I'm Volkan ŞİMŞİR</h3>
+                    <h3>Hello, I'm Volkan S</h3>
                     <p>I'm a passionate AI engineer specializing in generative technologies, machine learning, and neural networks. With over 8 years of experience, I've developed cutting-edge AI solutions that transform how businesses approach automation and innovation.</p>
                     <p>My expertise spans deep learning architectures, natural language processing, computer vision, and generative adversarial networks (GANs). I've led AI initiatives at tech giants and startups, delivering solutions that push the boundaries of what's possible with artificial intelligence.</p>
                     <p>When I'm not training models or researching new architectures, you can find me contributing to open-source AI projects, writing technical blogs, or exploring the intersection of AI and creative arts.</p>
@@ -1550,7 +1612,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Email</h3>
-                            <p>softwarevolkan@gmail.com</p>
+                            <p>volkan@example.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1559,7 +1621,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Phone</h3>
-                            <p>0 000 000 0000</p>
+                            <p>+1 (555) 123-4567</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1568,7 +1630,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Location</h3>
-                            <p>Türkiye</p>
+                            <p>San Francisco, CA</p>
                         </div>
                     </div>
                     <div class="contact-item gradient-border">
@@ -1641,10 +1703,34 @@
                     <label for="meetingTopic">Meeting Topic</label>
                     <textarea id="meetingTopic" class="form-control" placeholder="What would you like to discuss?" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">
+                
+                <!-- Availability Calendar -->
+                <div class="availability-calendar">
+                    <h3>Available Dates</h3>
+                    <div class="available-dates">
+                        <div class="date-option" onclick="selectDate(this, '2023-12-15')">Dec 15</div>
+                        <div class="date-option" onclick="selectDate(this, '2023-12-18')">Dec 18</div>
+                        <div class="date-option" onclick="selectDate(this, '2023-12-20')">Dec 20</div>
+                        <div class="date-option" onclick="selectDate(this, '2023-12-22')">Dec 22</div>
+                        <div class="date-option" onclick="selectDate(this, '2023-12-25')">Dec 25</div>
+                        <div class="date-option" onclick="selectDate(this, '2023-12-27')">Dec 27</div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn" style="margin-top: 20px;">
                     <i class="fas fa-paper-plane"></i> Request Meeting
                 </button>
             </form>
+        </div>
+    </div>
+
+    <!-- Form Submission Overlay -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="form-overlay-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Meeting Request Sent!</h3>
+            <p>Your meeting request has been successfully submitted. I will review your request and contact you shortly to confirm the appointment details.</p>
+            <button class="btn" onclick="closeFormOverlay()">Close</button>
         </div>
     </div>
 
@@ -1652,7 +1738,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h2>Volkan ŞİMŞİR</h2>
+                <h2>Volkan S</h2>
                 <p>AI Engineer & Generative Technology Specialist</p>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-github"></i></a>
@@ -1665,7 +1751,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Volkan ŞİMŞİR. All rights reserved.</p>
+                <p>&copy; 2023 Volkan S. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1833,6 +1919,20 @@
             animate();
         }
 
+        // Date selection function
+        function selectDate(element, date) {
+            // Remove selected class from all dates
+            document.querySelectorAll('.date-option').forEach(dateEl => {
+                dateEl.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked date
+            element.classList.add('selected');
+            
+            // Set the date input value
+            document.getElementById('meetingDate').value = date;
+        }
+
         // Show notification
         function showNotification(message) {
             const notification = document.createElement('div');
@@ -1878,14 +1978,6 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Replace with your actual email
-            const yourEmail = 'softwarevolkan@gmail.com';
-            
-            // Create mailto link
-            const mailSubject = encodeURIComponent(`Portfolio Contact: ${subject}`);
-            const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            const mailtoLink = `mailto:${yourEmail}?subject=${mailSubject}&body=${mailBody}`;
-            
             // Show loading state
             const btnText = document.querySelector('.btn-text');
             const loading = document.querySelector('.loading');
@@ -1895,26 +1987,28 @@
             loading.style.display = 'inline-block';
             submitBtn.disabled = true;
             
-            // Open default email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-            // Reset button state after delay
+            // Simulate form submission
             setTimeout(() => {
+                // In a real implementation, this would send to your backend
+                // For demo purposes, we'll show a success overlay
+                document.getElementById('formOverlay').classList.add('show');
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button state
                 btnText.textContent = 'Send Message';
                 loading.style.display = 'none';
                 submitBtn.disabled = false;
+                
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
                 
                 // Hide success message after 5 seconds
                 setTimeout(() => {
                     document.getElementById('successMessage').style.display = 'none';
                 }, 5000);
-            }, 1000);
+            }, 1500);
         });
 
         // Calendar Modal Functions
@@ -1925,6 +2019,9 @@
                 setTimeout(() => {
                     modal.classList.add('show');
                 }, 10);
+                
+                // Scroll to top of modal
+                modal.scrollTop = 0;
             }
         }
 
@@ -1957,65 +2054,65 @@
             const time = document.getElementById('meetingTime').value;
             const topic = document.getElementById('meetingTopic').value;
             
-            // Replace with your actual email
-            const yourEmail = 'softwarevolkan@gmail.com';
+            // Show loading state
+            const submitBtn = document.querySelector('#calendarForm .submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="loading"></span> Sending Request...';
+            submitBtn.disabled = true;
             
-            // Create meeting request email
-            const mailSubject = encodeURIComponent('Meeting Request from Portfolio');
-            const mailBody = encodeURIComponent(`Meeting Request Details:\n\nName: ${name}\nEmail: ${email}\nDate: ${date}\nTime: ${time}\nTopic: ${topic}\n\nPlease confirm availability for this meeting.`);
-            const mailtoLink = `mailto:${yourEmail}?subject=${mailSubject}&body=${mailBody}`;
-            
-            // Open default email client
-            window.location.href = mailtoLink;
-            
-            // Close modal
-            closeCalendarModal();
-            
-            // Reset form
-            this.reset();
-            
-            // Show success message
-            alert('Meeting request sent! I will contact you to confirm the appointment.');
+            // Simulate form submission
+            setTimeout(() => {
+                // In a real implementation, this would send to your backend
+                // For demo purposes, we'll show a success overlay
+                document.getElementById('formOverlay').classList.add('show');
+                
+                // Close modal
+                closeCalendarModal();
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success notification
+                showNotification('Meeting request sent successfully!');
+            }, 1500);
         });
 
-        // Header scroll effect
-        function headerScrollEffect() {
-            const header = document.querySelector('header');
-            if (header) {
-                if (window.scrollY > 100) {
-                    header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
-                    header.style.background = 'rgba(15, 23, 42, 0.98)';
-                } else {
-                    header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-                    header.style.background = 'rgba(15, 23, 42, 0.95)';
-                }
-            }
+        // Close form overlay
+        function closeFormOverlay() {
+            document.getElementById('formOverlay').classList.remove('show');
         }
 
-        // Hide scroll indicator when scrolling down
-        function hideScrollIndicator() {
-            const scrollIndicator = document.querySelector('.scroll-indicator');
-            if (scrollIndicator) {
-                if (window.scrollY > 100) {
-                    scrollIndicator.style.opacity = '0';
-                    scrollIndicator.style.visibility = 'hidden';
-                } else {
-                    scrollIndicator.style.opacity = '0.7';
-                    scrollIndicator.style.visibility = 'visible';
-                }
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
             }
-        }
+        });
+
+        // Hide scroll indicator when scrolling down
+        window.addEventListener('scroll', function() {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.visibility = 'hidden';
+            } else {
+                scrollIndicator.style.opacity = '0.7';
+                scrollIndicator.style.visibility = 'visible';
+            }
+        });
 
         // Initialize everything when page loads
         window.addEventListener('load', function() {
             initAIBackground();
-            updateViewerCounter();
-        });
-
-        // Event listeners
-        window.addEventListener('scroll', function() {
-            headerScrollEffect();
-            hideScrollIndicator();
         });
 
         // Handle window resize
