@@ -1264,10 +1264,6 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="visitor-counter">
-                <i class="fas fa-user"></i>
-                <span>Viewers: <span class="visitor-count" id="visitorCount">0</span></span>
-            </div>
         </div>
     </header>
 
@@ -1837,18 +1833,6 @@
             animate();
         }
 
-        // Visitor Counter
-        let viewerCount = 0;
-        
-        function updateViewerCounter() {
-            // Increment viewer count
-            viewerCount++;
-            const visitorCountElement = document.getElementById('visitorCount');
-            if (visitorCountElement) {
-                visitorCountElement.textContent = viewerCount;
-            }
-        }
-
         // Show notification
         function showNotification(message) {
             const notification = document.createElement('div');
@@ -1895,7 +1879,7 @@
             const message = document.getElementById('message').value;
             
             // Replace with your actual email
-            const yourEmail = 'volkan@example.com';
+            const yourEmail = 'softwarevolkan@gmail.com';
             
             // Create mailto link
             const mailSubject = encodeURIComponent(`Portfolio Contact: ${subject}`);
